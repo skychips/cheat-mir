@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="dialog">
+      <UniqueIdentifier>{0dc79ff3-7107-4b61-b34c-c0bd78948355}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="object">
+      <UniqueIdentifier>{91bb6d7d-8a2d-439a-91f1-c9c8e8d30ece}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="object\x86">
+      <UniqueIdentifier>{36aa6a29-4a5a-4f7c-bab7-382caf414bba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="header">
+      <UniqueIdentifier>{339ab382-80dc-4534-a4ce-369041a1d3a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dialog\object">
+      <UniqueIdentifier>{8eff7245-849a-48dc-8334-e4e56c6c96c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dialog\ui">
+      <UniqueIdentifier>{e9489232-62d5-4da3-b82d-e5c2498058ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header\details">
+      <UniqueIdentifier>{7cdc545c-9c30-46e3-93a8-c99a11ae008f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\details">
+      <UniqueIdentifier>{dc330e39-cafa-4b43-80c3-2e28bcef0fee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="object\x86\debug">
+      <UniqueIdentifier>{69d3ca07-345d-4712-a44c-ee5316bd0a2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="object\x86\release">
+      <UniqueIdentifier>{7ca503b1-6d43-455e-a0ad-c67354f41ae9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\details\cheat_console.cc">
+      <Filter>source\details</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\details\cheat_exports.cc">
+      <Filter>source\details</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\details\cheat_loop.cc">
+      <Filter>source\details</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\details\cheat_translate.cc">
+      <Filter>source\details</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cheat_main.cc">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dialogs\cheat_dialog_main.cc">
+      <Filter>dialog\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dialogs\cheat_dialog_object.h">
+      <Filter>dialog\object</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\details\cheat_translate.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\details\cheat_arch.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\details\cheat_console.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\details\cheat_exports.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\details\cheat_loop.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\details\cheat_platform.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\details\cheat_plugin.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\dialogs\cheat_dialog_main.hxx">
+      <Filter>dialog\ui</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\cheat_exports.def">
+      <Filter>resource</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="..\..\..\..\..\common\3rdparty\qt\kernel\x86\lib\objects-Debug\QWindowsIntegrationPlugin_resources_2\.rcc\qrc_cursors.cpp.obj">
+      <Filter>object\x86\debug</Filter>
+    </Object>
+    <Object Include="..\..\..\..\..\common\3rdparty\qt\kernel\x86\lib\objects-Debug\QWindowsIntegrationPlugin_resources_1\.rcc\qrc_openglblacklists.cpp.obj">
+      <Filter>object\x86\debug</Filter>
+    </Object>
+    <Object Include="..\..\..\..\..\common\3rdparty\qt\kernel\x86\lib\objects-Debug\Widgets_resources_3\.rcc\qrc_qmessagebox.cpp.obj">
+      <Filter>object\x86\debug</Filter>
+    </Object>
+    <Object Include="..\..\..\..\..\common\3rdparty\qt\kernel\x86\lib\objects-Debug\Gui_resources_1\.rcc\qrc_qpdf.cpp.obj">
+      <Filter>object\x86\debug</Filter>
+    </Object>
+    <Object Include="..\..\..\..\..\common\3rdparty\qt\kernel\x86\lib\objects-Debug\Widgets_resources_1\.rcc\qrc_qstyle.cpp.obj">
+      <Filter>object\x86\debug</Filter>
+    </Object>
+    <Object Include="..\..\..\..\..\common\3rdparty\qt\kernel\x86\lib\objects-Debug\Widgets_resources_2\.rcc\qrc_qstyle1.cpp.obj">
+      <Filter>object\x86\debug</Filter>
+    </Object>
+    <Object Include="..\..\..\..\..\common\3rdparty\qt\kernel\x86\lib\objects-RelWithDebInfo\QWindowsIntegrationPlugin_resources_1\.rcc\qrc_openglblacklists.cpp.obj">
+      <Filter>object\x86\release</Filter>
+    </Object>
+    <Object Include="..\..\..\..\..\common\3rdparty\qt\kernel\x86\lib\objects-RelWithDebInfo\QWindowsIntegrationPlugin_resources_2\.rcc\qrc_cursors.cpp.obj">
+      <Filter>object\x86\release</Filter>
+    </Object>
+    <Object Include="..\..\..\..\..\common\3rdparty\qt\kernel\x86\lib\objects-RelWithDebInfo\Widgets_resources_1\.rcc\qrc_qstyle.cpp.obj">
+      <Filter>object\x86\release</Filter>
+    </Object>
+    <Object Include="..\..\..\..\..\common\3rdparty\qt\kernel\x86\lib\objects-RelWithDebInfo\Widgets_resources_2\.rcc\qrc_qstyle1.cpp.obj">
+      <Filter>object\x86\release</Filter>
+    </Object>
+    <Object Include="..\..\..\..\..\common\3rdparty\qt\kernel\x86\lib\objects-RelWithDebInfo\Widgets_resources_3\.rcc\qrc_qmessagebox.cpp.obj">
+      <Filter>object\x86\release</Filter>
+    </Object>
+    <Object Include="..\..\..\..\..\common\3rdparty\qt\kernel\x86\lib\objects-RelWithDebInfo\Gui_resources_1\.rcc\qrc_qpdf.cpp.obj">
+      <Filter>object\x86\release</Filter>
+    </Object>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\src\dialogs\cheat_dialog_main.h">
+      <Filter>dialog\ui</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

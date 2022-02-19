@@ -1,0 +1,71 @@
+#ifndef __CHEAT_PLUGIN_H__
+#define __CHEAT_PLUGIN_H__
+
+#if defined(_MSC_VER) && (_MSC_VER >= 1200)
+#   pragma once
+#endif
+
+#include <QtPlugin>
+
+Q_IMPORT_PLUGIN(QWindowsVistaStylePlugin)
+Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)
+Q_IMPORT_PLUGIN(QSvgIconPlugin)
+Q_IMPORT_PLUGIN(QGifPlugin)
+Q_IMPORT_PLUGIN(QICNSPlugin)
+Q_IMPORT_PLUGIN(QICOPlugin)
+Q_IMPORT_PLUGIN(QJpegPlugin)
+Q_IMPORT_PLUGIN(QSvgPlugin)
+//Q_IMPORT_PLUGIN(QTgaPlugin)
+Q_IMPORT_PLUGIN(QTiffPlugin)
+Q_IMPORT_PLUGIN(QWbmpPlugin)
+Q_IMPORT_PLUGIN(QWebpPlugin)
+
+#if defined(_DEBUG)
+#   pragma comment(lib, "Qt6Cored.lib")
+#   pragma comment(lib, "Qt6Guid.lib")
+#   pragma comment(lib, "Qt6Widgetsd.lib")
+#   pragma comment(lib, "Qt6OpenGLd.lib")
+#   pragma comment(lib, "Qt6BundledHarfbuzzd.lib")
+#   pragma comment(lib, "Qt6BundledFreetyped.lib")
+#   pragma comment(lib, "Qt6BundledLibpngd.lib")
+#   pragma comment(lib, "Qt6BundledPcre2d.lib")
+#   pragma comment(lib, "Qt6EntryPointd.lib")
+#   pragma comment(lib, "Qsvgicond.lib")
+#   pragma comment(lib, "Qgifd.lib")
+#   pragma comment(lib, "Qicnsd.lib")
+#   pragma comment(lib, "Qicod.lib")
+#   pragma comment(lib, "Qjpegd.lib")
+#   pragma comment(lib, "Qicod.lib")
+#   pragma comment(lib, "Qsvgd.lib")
+#   pragma comment(lib, "Qt6Svgd.lib")
+#   pragma comment(lib, "Qtiffd.lib")
+#   pragma comment(lib, "Qwbmpd.lib")
+#   pragma comment(lib, "Qwebpd.lib")
+#   pragma comment(lib, "Qwindowsvistastyled.lib")
+#   pragma comment(lib, "Qwindowsd.lib")
+#else
+#   pragma comment(lib, "Qt6Core.lib")
+#   pragma comment(lib, "Qt6Gui.lib")
+#   pragma comment(lib, "Qt6Widgets.lib")
+#   pragma comment(lib, "Qt6OpenGL.lib")
+#   pragma comment(lib, "Qt6BundledHarfbuzz.lib")
+#   pragma comment(lib, "Qt6BundledFreetype.lib")
+#   pragma comment(lib, "Qt6BundledLibpng.lib")
+#   pragma comment(lib, "Qt6BundledPcre2.lib")
+#   pragma comment(lib, "Qt6EntryPoint.lib")
+#   pragma comment(lib, "Qsvgicon.lib")
+#   pragma comment(lib, "Qgif.lib")
+#   pragma comment(lib, "Qicns.lib")
+#   pragma comment(lib, "Qico.lib")
+#   pragma comment(lib, "Qjpeg.lib")
+#   pragma comment(lib, "Qico.lib")
+#   pragma comment(lib, "Qsvg.lib")
+#   pragma comment(lib, "Qt6Svg.lib")
+#   pragma comment(lib, "Qtiff.lib")
+#   pragma comment(lib, "Qwbmp.lib")
+#   pragma comment(lib, "Qwebp.lib")
+#   pragma comment(lib, "Qwindowsvistastyle.lib")
+#   pragma comment(lib, "Qwindows.lib")
+#endif
+
+#endif // __CHEAT_PLUGIN_H__
