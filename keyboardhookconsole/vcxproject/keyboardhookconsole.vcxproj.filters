@@ -7,7 +7,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\main.cc">
+    <ClCompile Include="..\memory_search_pattern.cc">
       <Filter>source files</Filter>
     </ClCompile>
   </ItemGroup>
