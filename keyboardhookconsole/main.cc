@@ -15,7 +15,7 @@ int main()
             break;
         }
     }
-    printf("呼出\n");
+
     if (GamehWnd)
     {
         DWORD fProcessId = 0;
@@ -35,10 +35,7 @@ int main()
         }
 
         getchar();
-       // Sleep(50000000);
 
-       // SendMessage(GamehWnd, WM_PROCESS_EVENT_FILTER, 0, 0);
-        printf("卸载消息\n");
         if (!UnhookWindowsHookEx(m_Hook))
         {
             printf("卸载HOOK失败\n");
