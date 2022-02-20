@@ -6,7 +6,9 @@
 #endif
 
 #include <details/cheat_platform.h>
+
 #include <memory>
+
 #include <QApplication>
 #include <QRect>
 

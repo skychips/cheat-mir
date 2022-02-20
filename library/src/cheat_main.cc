@@ -1,5 +1,6 @@
 ﻿#include <details/cheat_exports.h>
 #include <details/cheat_plugin.h>
+#include <memory/cheat_memory_search.h>
 
 BOOL APIENTRY DllMain(HMODULE hinstance,
                       DWORD reason,

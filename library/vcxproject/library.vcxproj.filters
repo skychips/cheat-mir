@@ -39,6 +39,12 @@
     <Filter Include="object\x86\release">
       <UniqueIdentifier>{7ca503b1-6d43-455e-a0ad-c67354f41ae9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\memory">
+      <UniqueIdentifier>{93180bb2-6414-4aa8-b3d4-9f20550cae5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header\memory">
+      <UniqueIdentifier>{3d74ec4a-d615-4658-a89d-f2b7c43353ad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\details\cheat_console.cc">
@@ -61,6 +67,9 @@
     </ClCompile>
     <ClCompile Include="..\src\dialogs\cheat_dialog_object.h">
       <Filter>dialog\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\memory\cheat_memory_search.cc">
+      <Filter>source\memory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +96,9 @@
     </ClInclude>
     <ClInclude Include="..\src\dialogs\cheat_dialog_main.hxx">
       <Filter>dialog\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\memory\cheat_memory_search.h">
+      <Filter>header\memory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

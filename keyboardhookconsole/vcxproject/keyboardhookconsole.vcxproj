@@ -19,7 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\memory_search_pattern.cc" />
+    <ClCompile Include="..\main.cc" />
+    <ClCompile Include="cheat_search_memory.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cheat_search_memory.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

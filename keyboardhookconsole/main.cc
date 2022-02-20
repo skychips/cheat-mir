@@ -91,7 +91,7 @@ bool SearchPattern(const unsigned char* start,        // 起始地址
     return false;
 }
 
-int main1123()
+int main()
 {
     // 0x04, 0x00, 0xE9, 0xFB, 0xD4, 0x0A
     std::string string_hex = "04 00 E9 ?? ?? 0A";

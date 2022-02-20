@@ -26,6 +26,7 @@
     <ClCompile Include="..\src\details\cheat_translate.cc" />
     <ClCompile Include="..\src\dialogs\cheat_dialog_main.cc" />
     <ClCompile Include="..\src\dialogs\cheat_dialog_object.h" />
+    <ClCompile Include="..\src\memory\cheat_memory_search.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\details\cheat_arch.h" />
@@ -35,6 +36,7 @@
     <ClInclude Include="..\src\details\cheat_platform.h" />
     <ClInclude Include="..\src\details\cheat_plugin.h" />
     <ClInclude Include="..\src\details\cheat_translate.h" />
+    <ClInclude Include="..\src\memory\cheat_memory_search.h" />
     <CustomBuild Include="..\src\dialogs\cheat_dialog_main.h">
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe" "%(FullPath)" -o "..\src\dialogs\object\%(Filename).cpp"</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe" "%(FullPath)" -o "..\src\dialogs\object\%(Filename).cpp"</Command>
