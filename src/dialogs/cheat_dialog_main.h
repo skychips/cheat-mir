@@ -7,6 +7,7 @@
 
 #include <details/cheat_platform.h>
 #include <dialogs/cheat_dialog_main.hxx>
+
 #include <QMainWindow>
 #include <QDialog>
 #include <QLabel>

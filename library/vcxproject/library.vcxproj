@@ -19,41 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\cheat_main.cc" />
-    <ClCompile Include="..\src\details\cheat_console.cc" />
-    <ClCompile Include="..\src\details\cheat_exports.cc" />
-    <ClCompile Include="..\src\details\cheat_loop.cc" />
-    <ClCompile Include="..\src\details\cheat_translate.cc" />
-    <ClCompile Include="..\src\dialogs\cheat_dialog_main.cc" />
-    <ClCompile Include="..\src\dialogs\cheat_dialog_object.h" />
-    <ClCompile Include="..\src\memory\cheat_memory_search.cc" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\src\details\cheat_arch.h" />
-    <ClInclude Include="..\src\details\cheat_console.h" />
-    <ClInclude Include="..\src\details\cheat_exports.h" />
-    <ClInclude Include="..\src\details\cheat_loop.h" />
-    <ClInclude Include="..\src\details\cheat_platform.h" />
-    <ClInclude Include="..\src\details\cheat_plugin.h" />
-    <ClInclude Include="..\src\details\cheat_translate.h" />
-    <ClInclude Include="..\src\memory\cheat_memory_search.h" />
-    <CustomBuild Include="..\src\dialogs\cheat_dialog_main.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe" "%(FullPath)" -o "..\src\dialogs\object\%(Filename).cpp"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe" "%(FullPath)" -o "..\src\dialogs\object\%(Filename).cpp"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe" "%(FullPath)" -o "..\src\dialogs\object\%(Filename).cpp"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe" "%(FullPath)" -o "..\src\dialogs\object\%(Filename).cpp"</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\dialogs\object\%(Filename).cpp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\dialogs\object\%(Filename).cpp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\src\dialogs\object\%(Filename).cpp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\src\dialogs\object\%(Filename).cpp</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build %(Filename).cpp</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build %(Filename).cpp</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build %(Filename).cpp</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build %(Filename).cpp</Message>
-    </CustomBuild>
-    <ClInclude Include="..\src\dialogs\cheat_dialog_main.hxx" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\cheat_exports.def" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +64,45 @@
     <Object Include="..\..\..\..\..\common\3rdparty\qt\kernel\x86\lib\objects-RelWithDebInfo\Widgets_resources_3\.rcc\qrc_qmessagebox.cpp.obj">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </Object>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\cheat_main.cc" />
+    <ClCompile Include="..\..\src\details\cheat_console.cc" />
+    <ClCompile Include="..\..\src\details\cheat_exports.cc" />
+    <ClCompile Include="..\..\src\details\cheat_loop.cc" />
+    <ClCompile Include="..\..\src\details\cheat_translate.cc" />
+    <ClCompile Include="..\..\src\dialogs\cheat_dialog_main.cc" />
+    <ClCompile Include="..\..\src\dialogs\cheat_dialog_object.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\details\cheat_arch.h" />
+    <ClInclude Include="..\..\src\details\cheat_callback.h" />
+    <ClInclude Include="..\..\src\details\cheat_console.h" />
+    <ClInclude Include="..\..\src\details\cheat_duration.h" />
+    <ClInclude Include="..\..\src\details\cheat_exports.h" />
+    <ClInclude Include="..\..\src\details\cheat_loop.h" />
+    <ClInclude Include="..\..\src\details\cheat_platform.h" />
+    <ClInclude Include="..\..\src\details\cheat_plugin.h" />
+    <ClInclude Include="..\..\src\details\cheat_stdint.h" />
+    <ClInclude Include="..\..\src\details\cheat_translate.h" />
+    <ClInclude Include="..\..\src\details\cheat_untlity.h" />
+    <ClInclude Include="..\..\src\details\cheat_utils.h" />
+    <CustomBuild Include="..\..\src\dialogs\cheat_dialog_main.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe" "%(FullPath)" -o "..\..\src\dialogs\object\%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build %(Filename).cpp</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\src\dialogs\object\%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe" "%(FullPath)" -o "..\..\src\dialogs\object\%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build %(Filename).cpp</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\src\dialogs\object\%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe" "%(FullPath)" -o "..\..\src\dialogs\object\%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build %(Filename).cpp</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\src\dialogs\object\%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe" "%(FullPath)" -o "..\..\src\dialogs\object\%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build %(Filename).cpp</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\src\dialogs\object\%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\..\src\dialogs\cheat_dialog_main.hxx" />
+    <ClInclude Include="..\..\src\dialogs\cheat_dialog_object.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -188,7 +192,7 @@
       </PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>..\;..\src;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtWinExtras;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\..\src;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtWinExtras;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -215,7 +219,7 @@
       </PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>..\;..\src;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtWinExtras;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\..\src;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtWinExtras;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
@@ -241,7 +245,7 @@
       </PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>..\;..\src;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtWinExtras;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\..\src;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtWinExtras;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -268,7 +272,7 @@
       </PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>..\;..\src;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtWinExtras;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\..\src;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtWinExtras;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>

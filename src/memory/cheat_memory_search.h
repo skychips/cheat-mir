@@ -12,11 +12,14 @@
 #include <algorithm>
 #include <stdexcept>
 #include <array>
+#include <unordered_map>
 
-#include <intrin.h>
+#include <smmintrin.h>
+#include <xmmintrin.h>
 
 namespace Mir
 {
+    
     class CheatMemorySearch
     {
     public:
@@ -29,6 +32,7 @@ namespace Mir
         bool SearchPattern(const unsigned char* pos, const std::string& chars);
         bool SearchPatternEx(const void* start, const void* end, const std::string& chars, std::size_t index, std::size_t count, void*& address);
     private:
+
     };
 }
 #endif // __CHEAT_SEARCH_MEMORY_H__

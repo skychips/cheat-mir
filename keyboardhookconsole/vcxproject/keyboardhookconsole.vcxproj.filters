@@ -7,16 +7,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cheat_search_memory.cc">
-      <Filter>source files</Filter>
-    </ClCompile>
     <ClCompile Include="..\main.cc">
       <Filter>source files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="cheat_search_memory.h">
-      <Filter>source files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

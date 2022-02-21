@@ -9,9 +9,6 @@
 
 #include <memory>
 
-#include <QApplication>
-#include <QRect>
-
 namespace Mir
 {
     class CheatConsole;
@@ -29,7 +26,6 @@ namespace Mir
     private:
         std::unique_ptr<CheatTranslate>             cheat_translate;
         std::unique_ptr<CheatConsole>               cheat_console;
-
         std::unique_ptr<CheatDialogMain>            cheat_main;
     };
 }

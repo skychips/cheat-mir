@@ -4,8 +4,6 @@
 
 #include <dialogs/cheat_dialog_main.h>
 
-#include <memory/cheat_memory_search.h>
-
 #include <thread>
 
 namespace Mir
@@ -39,24 +37,24 @@ namespace Mir
                     cheat_main = std::make_unique<CheatDialogMain>(&widget);
                     cheat_main->setAttribute(Qt::WA_DeleteOnClose);
                     cheat_main->show();
-                    Mir::CheatMemorySearch help;
-                    void* p1 = reinterpret_cast<void*>(0x00720000);
-                    void* p2 = reinterpret_cast<void*>(0x0072B514);
+
+                    void* p1 = reinterpret_cast<void*>(0x00663500);
+                    void* p2 = reinterpret_cast<void*>(0x00664000);
                     void* p3 = 0;
 
                     std::size_t s = GetTickCount();
 
-                    for (std::size_t i = 0; i < 100000; ++i)
+                    for (std::size_t i = 0; i < 1000000; ++i)
                     {
-                        help.SearchPatternEx(p1, p2, "55 8B EC ?? 56 8B 5D 08 E8 ?? ?? ?? ?? 33 D2", 4, p3);
+                        SearchPatternEx(p1, p2, "BB ?? ?? ?? ?? 8B C3 33 C9 BA ?? ?? ?? ?? E8", 1, p3);
                     }
                     printf("SearchPatternEx -> %p time: %d\n", p3, GetTickCount() - s);
 
                     s = GetTickCount();
 
-                    for (std::size_t i = 0; i < 100000; ++i)
+                    for (std::size_t i = 0; i < 1000000; ++i)
                     {
-                        help.SearchPattern(p1, p2, "55 8B EC ?? 56 8B 5D 08 E8 ?? ?? ?? ?? 33 D2", 4, p3);
+                        SearchPattern(p1, p2, "BB ?? ?? ?? ?? 8B C3 33 C9 BA ?? ?? ?? ?? E8", 4, p3);
                     }
                     
                     

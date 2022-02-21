@@ -70,4 +70,6 @@
 #   pragma comment(lib, "onecoreuap.lib")
 #endif
 
+#include <details/cheat_utils.h>
+
 #endif // __CHEAT_PLATFORM_H__

@@ -45,61 +45,9 @@
     <Filter Include="header\memory">
       <UniqueIdentifier>{3d74ec4a-d615-4658-a89d-f2b7c43353ad}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\src\details\cheat_console.cc">
-      <Filter>source\details</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\details\cheat_exports.cc">
-      <Filter>source\details</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\details\cheat_loop.cc">
-      <Filter>source\details</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\details\cheat_translate.cc">
-      <Filter>source\details</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\cheat_main.cc">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\dialogs\cheat_dialog_main.cc">
-      <Filter>dialog\ui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\dialogs\cheat_dialog_object.h">
-      <Filter>dialog\object</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\memory\cheat_memory_search.cc">
-      <Filter>source\memory</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\src\details\cheat_translate.h">
-      <Filter>header\details</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\details\cheat_arch.h">
-      <Filter>header\details</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\details\cheat_console.h">
-      <Filter>header\details</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\details\cheat_exports.h">
-      <Filter>header\details</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\details\cheat_loop.h">
-      <Filter>header\details</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\details\cheat_platform.h">
-      <Filter>header\details</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\details\cheat_plugin.h">
-      <Filter>header\details</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\dialogs\cheat_dialog_main.hxx">
-      <Filter>dialog\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\memory\cheat_memory_search.h">
-      <Filter>header\memory</Filter>
-    </ClInclude>
+    <Filter Include="dialog\src">
+      <UniqueIdentifier>{0420e177-7296-4459-acbd-fd7b30f4fabf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\cheat_exports.def">
@@ -145,8 +93,75 @@
     </Object>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="..\src\dialogs\cheat_dialog_main.h">
+    <ClCompile Include="..\..\src\cheat_main.cc">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\details\cheat_console.cc">
+      <Filter>source\details</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\details\cheat_exports.cc">
+      <Filter>source\details</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\details\cheat_loop.cc">
+      <Filter>source\details</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\details\cheat_translate.cc">
+      <Filter>source\details</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\dialogs\cheat_dialog_main.cc">
+      <Filter>dialog\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\dialogs\cheat_dialog_object.cc">
+      <Filter>dialog\object</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\dialogs\cheat_dialog_object.h">
+      <Filter>dialog\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\dialogs\cheat_dialog_main.hxx">
       <Filter>dialog\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\details\cheat_loop.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\details\cheat_platform.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\details\cheat_plugin.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\details\cheat_stdint.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\details\cheat_translate.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\details\cheat_untlity.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\details\cheat_utils.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\details\cheat_arch.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\details\cheat_callback.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\details\cheat_console.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\details\cheat_duration.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\details\cheat_exports.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\src\dialogs\cheat_dialog_main.h">
+      <Filter>dialog\src</Filter>
     </CustomBuild>
   </ItemGroup>
 </Project>
