@@ -158,6 +158,9 @@
     <ClInclude Include="..\..\src\details\cheat_exports.h">
       <Filter>header\details</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\details\cheat_cpuinfo.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\src\dialogs\cheat_dialog_main.h">

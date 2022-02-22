@@ -5,7 +5,7 @@
 #   pragma once
 #endif
 
-#include <details/cheat_arch.h>
+#include <details/cheat_stdint.h>
 
 #ifdef H_OS_WINDOWS
 #   define FORCEINLINE          __forceinline

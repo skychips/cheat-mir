@@ -39,4 +39,13 @@
 #       define H_OS_WINDOWS_DESKTOP                                                             1
 #   endif  // _WIN32_WCE
 #endif  // __CYGWIN__
+
+#if defined(__LP64__) || defined(_WIN64) || (defined(__x86_64__) && !defined(__ILP32__)) || defined(_M_X64) || defined(__ia64) || defined (_M_IA64) || defined(__aarch64__) || defined(__powerpc64__)
+    typedef long long               s96;
+    typedef unsigned long long      u96;
+#else
+    typedef int                     s96;
+    typedef unsigned int            u96;
+#endif
+
 #endif // __CHEAT_ARCH_H__

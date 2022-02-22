@@ -38,27 +38,13 @@ namespace Mir
                     cheat_main->setAttribute(Qt::WA_DeleteOnClose);
                     cheat_main->show();
 
-                    void* p1 = reinterpret_cast<void*>(0x00663500);
-                    void* p2 = reinterpret_cast<void*>(0x00664000);
-                    void* p3 = 0;
+                    void * address = 0;
 
-                    std::size_t s = GetTickCount();
+                    SearchPatternEx(0x00663500, 0x00664000, "BB ?? ?? ?? ?? 8B C3 33 C9 BA ?? ?? ?? ?? E8", 1, address);
+                    printf("≤Âº˛µÿ÷∑: %p\n", address);
+                    SearchPatternEx(0x00638000, 0x00639000, "A1 ?? ?? ?? ?? C6 00 00 E8 ?? ?? ?? ?? 33 C0 5A 59 59", 1, address);
+                    printf("≥‘“©µÿ÷∑: %p\n", address);
 
-                    for (std::size_t i = 0; i < 1000000; ++i)
-                    {
-                        SearchPatternEx(p1, p2, "BB ?? ?? ?? ?? 8B C3 33 C9 BA ?? ?? ?? ?? E8", 1, p3);
-                    }
-                    printf("SearchPatternEx -> %p time: %d\n", p3, GetTickCount() - s);
-
-                    s = GetTickCount();
-
-                    for (std::size_t i = 0; i < 1000000; ++i)
-                    {
-                        SearchPattern(p1, p2, "BB ?? ?? ?? ?? 8B C3 33 C9 BA ?? ?? ?? ?? E8", 4, p3);
-                    }
-                    
-                    
-                    printf("SearchPattern -> %p time: %d\n", p3, GetTickCount() - s);
                     a.exec();
                 }
 

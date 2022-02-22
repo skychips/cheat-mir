@@ -78,6 +78,7 @@
     <ClInclude Include="..\..\src\details\cheat_arch.h" />
     <ClInclude Include="..\..\src\details\cheat_callback.h" />
     <ClInclude Include="..\..\src\details\cheat_console.h" />
+    <ClInclude Include="..\..\src\details\cheat_cpuinfo.h" />
     <ClInclude Include="..\..\src\details\cheat_duration.h" />
     <ClInclude Include="..\..\src\details\cheat_exports.h" />
     <ClInclude Include="..\..\src\details\cheat_loop.h" />

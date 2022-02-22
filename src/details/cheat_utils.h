@@ -502,6 +502,11 @@ namespace Mir
         return false;
     }
 
+    static bool SearchPattern(const u96 start, const u96 end, const std::string& keyword, std::size_t index, void*& address)
+    {
+        return SearchPattern(reinterpret_cast<const void*>(start), reinterpret_cast<const void*>(end), keyword, index, address);
+    }
+
     static bool SearchPatternEx(const void* start, const void* end, const std::string& chars, std::size_t index, std::size_t count, void*& address)
     {
         for (auto [masks, i, n, pos] = std::make_tuple(std::array<std::size_t, 32>{}, static_cast<std::size_t>(0), static_cast<std::size_t>(0), static_cast<const unsigned char*>(start)); i < count; ++i)
@@ -559,6 +564,11 @@ namespace Mir
         }
 
         return false;
+    }
+
+    static bool SearchPatternEx(const u96 start, const u96 end, const std::string& keyword, std::size_t index, void*& address)
+    {
+        return SearchPatternEx(reinterpret_cast<const void*>(start), reinterpret_cast<const void*>(end), keyword, index, address);
     }
 }
 
