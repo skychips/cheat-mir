@@ -48,6 +48,12 @@
     <Filter Include="dialog\src">
       <UniqueIdentifier>{0420e177-7296-4459-acbd-fd7b30f4fabf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\sdk">
+      <UniqueIdentifier>{bd6005ea-cf25-41e0-9d5d-b2f0f178b3fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header\sdk">
+      <UniqueIdentifier>{e1bcebc2-1368-4896-ab1a-7bd013e6fb89}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\cheat_exports.def">
@@ -160,6 +166,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\details\cheat_cpuinfo.h">
       <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sdk\cheat_game_struct.h">
+      <Filter>header\sdk</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

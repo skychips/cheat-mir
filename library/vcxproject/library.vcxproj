@@ -88,6 +88,7 @@
     <ClInclude Include="..\..\src\details\cheat_translate.h" />
     <ClInclude Include="..\..\src\details\cheat_untlity.h" />
     <ClInclude Include="..\..\src\details\cheat_utils.h" />
+    <ClInclude Include="..\..\src\sdk\cheat_game_struct.h" />
     <CustomBuild Include="..\..\src\dialogs\cheat_dialog_main.h">
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe" "%(FullPath)" -o "..\..\src\dialogs\object\%(Filename).cpp"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build %(Filename).cpp</Message>

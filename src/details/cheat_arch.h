@@ -9,14 +9,15 @@
 #include <cassert>
 #include <stdio.h>
 #include <stdint.h>
+#include <cstdint>
 
 #ifdef __CYGWIN__
 #   define H_OS_CYGWIN                                                                          1
 #   elif defined(__MINGW__) || defined(__MINGW32__) || defined(__MINGW64__)
 #       define H_OS_WINDOWS                                                                     1
 #       define H_OS_WINDOWS_MINGW                                                               1
-#   elif defined(_MSC_VER) && (defined(_WIN32) || defined(__WIN32__) || defined(WIN32) || defined(_WIN64) || defined(_WIN64_) || defined(WIN64))
-//#       define WIN32_LEAN_AND_MEAN
+#   elif defined(_MSC_VER)
+#       undef WIN32_LEAN_AND_MEAN
 #       include <windows.h>
 #       define H_OS_WINDOWS                                                                     1
 #   ifdef _WIN32_WCE
@@ -40,7 +41,7 @@
 #   endif  // _WIN32_WCE
 #endif  // __CYGWIN__
 
-#if defined(__LP64__) || defined(_WIN64) || (defined(__x86_64__) && !defined(__ILP32__)) || defined(_M_X64) || defined(__ia64) || defined (_M_IA64) || defined(__aarch64__) || defined(__powerpc64__)
+#if defined(__LP64__) || defined(_WIN64) || defined(__x86_64__) || defined(_M_X64) || defined(__ia64) || defined (_M_IA64) || defined(__aarch64__) || defined(__powerpc64__)
     typedef long long               s96;
     typedef unsigned long long      u96;
 #else

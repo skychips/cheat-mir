@@ -1,0 +1,29 @@
+{ Delphi XE2 }
+{$IFDEF VER230}
+  {$DEFINE XE}
+{$ENDIF}
+
+{ Delphi XE3 }
+{$IFDEF VER240}
+  {$DEFINE XE}
+{$ENDIF}
+
+{ Delphi XE4 }
+{$IFDEF VER250}
+  {$DEFINE XE}
+{$ENDIF}
+
+{ Delphi XE5 }
+{$IFDEF VER260}
+  {$DEFINE XE}
+{$ENDIF}
+
+{ Delphi XE6 }
+{$IFDEF VER270}
+  {$DEFINE XE}
+{$ENDIF}
+
+{ Delphi XE7 }
+{$IFDEF VER280}
+  {$DEFINE XE}
+{$ENDIF}
