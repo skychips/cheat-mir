@@ -1408,17 +1408,17 @@ struct IGInterface
     IGDButton                       DButton;
     IGDEdit                         DEdit;
     IGDGrid                         DGrid;
-    IGDComboBox		                DComboBox;
+    IGDComboBox                     DComboBox;
     IGDPopupMenu                    DPopupMenu;
-    IGDPageControl	                DPageControl;
-    IGDProgressBar	                DProgressBar;
+    IGDPageControl                  DPageControl;
+    IGDProgressBar                  DProgressBar;
 };
 
 struct IGClient
 {
     IGList                          List;
     IGStringList                    StringList;
-    IGItemMenuList	                ItemMenuList;
+    IGItemMenuList                  ItemMenuList;
     IGTexture                       Texture;
     IGImages                        Images;
     IGInterface                     Interface;
