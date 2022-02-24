@@ -1,8 +1,10 @@
-#include <details/cheat_loop.h>
+ï»¿#include <details/cheat_loop.h>
 #include <details/cheat_console.h>
 #include <details/cheat_translate.h>
 
 #include <dialogs/cheat_dialog_main.h>
+
+#include <sdk/cheat_game_struct.h>
 
 #include <thread>
 
@@ -17,7 +19,7 @@ namespace Mir
 
     CheatLoop::~CheatLoop()
     {
-        printf("Ğ¶ÔØ\n");
+        printf("å¸è½½\n");
         if (nullptr != cheat_main)
         {
             cheat_main->close();
@@ -34,16 +36,19 @@ namespace Mir
                 {
                     QApplication a(*const_cast<int*>(std::addressof(static_cast<const int&>(0))), nullptr);
                     QWidget widget;
-                    cheat_main = std::make_unique<CheatDialogMain>(&widget);
+                    cheat_main              = std::make_unique<CheatDialogMain>(&widget);
                     cheat_main->setAttribute(Qt::WA_DeleteOnClose);
                     cheat_main->show();
 
-                    void * address = 0;
+                    void * address          = 0;
 
                     SearchPatternEx(0x00663500, 0x00664000, "BB ?? ?? ?? ?? 8B C3 33 C9 BA ?? ?? ?? ?? E8", 1, address);
-                    printf("²å¼şµØÖ·: %p\n", address);
+                    printf("æ’ä»¶åœ°å€: %p\n", address);
+
+                    struct IGClient* Client = reinterpret_cast<struct IGClient*>(*reinterpret_cast<unsigned int*>(reinterpret_cast<unsigned int>(address) + 1));
+
                     SearchPatternEx(0x00638000, 0x00639000, "A1 ?? ?? ?? ?? C6 00 00 E8 ?? ?? ?? ?? 33 C0 5A 59 59", 1, address);
-                    printf("³ÔÒ©µØÖ·: %p\n", address);
+                    printf("åƒè¯åœ°å€: %p\n", address);
 
                     a.exec();
                 }
@@ -56,7 +61,7 @@ namespace Mir
                         {
                             if (cheat_main->adjustVisible())
                             {
-                                printf("Òş²Ø1\n");
+                                printf("éšè—1\n");
                             }
                         }
                     }

@@ -167,11 +167,11 @@
     <ClInclude Include="..\..\src\details\cheat_cpuinfo.h">
       <Filter>header\details</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\sdk\cheat_game_struct.h">
-      <Filter>header\sdk</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\details\cheat_xorstr.h">
       <Filter>header\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sdk\cheat_game_struct.h">
+      <Filter>header\sdk</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
