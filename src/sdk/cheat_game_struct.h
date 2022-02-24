@@ -1456,7 +1456,7 @@ struct IGDropItem
     int                             id;
     int                             Unassigned;
     int                             Looks;
-    unsigned int                    Color;			// RGB
+    unsigned int                    Color;                  // RGB
     unsigned char                   Size;
     char                            Name[30];
     unsigned char                   DBSize;
