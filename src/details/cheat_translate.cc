@@ -1,4 +1,4 @@
-#include <details/cheat_translate.h>
+ï»¿#include <details/cheat_translate.h>
 
 namespace Mir
 {
@@ -20,7 +20,7 @@ namespace Mir
     {
         if (nullptr != cheat_handler)
         {
-            // »¹Ô­Êı¾İ
+            // è¿˜åŸæ•°æ®
             SetWindowLong(cheat_handler, GWL_USERDATA, reinterpret_cast<LONG>(cheat_data));
             SetWindowLong(cheat_handler, GWL_WNDPROC, reinterpret_cast<LONG>(cheat_proc));
         }
@@ -30,7 +30,7 @@ namespace Mir
     {
         if (uMsg == WM_KEYDOWN || uMsg == WM_SYSKEYDOWN)
         {
-            printf("°´ÏÂ¼üÅÌ£º%d\n", wParam);
+            printf("æŒ‰ä¸‹é”®ç›˜ï¼š%d\n", wParam);
         }
 
         return CallWindowProc(cheat_proc, hWnd, uMsg, wParam, lParam);

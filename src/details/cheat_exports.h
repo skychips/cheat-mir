@@ -1,4 +1,4 @@
-#ifndef __CHEAT_EXPORTS_H__
+﻿#ifndef __CHEAT_EXPORTS_H__
 #define __CHEAT_EXPORTS_H__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)

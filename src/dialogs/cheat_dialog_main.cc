@@ -1,4 +1,4 @@
-#include <dialogs/cheat_dialog_main.h>
+﻿#include <dialogs/cheat_dialog_main.h>
 
 namespace Mir
 {

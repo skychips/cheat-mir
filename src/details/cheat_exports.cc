@@ -1,4 +1,4 @@
-#include <details/cheat_exports.h>
+﻿#include <details/cheat_exports.h>
 #include <details/cheat_loop.h>
 namespace Mir
 {

@@ -1,1 +1,1 @@
-#include <dialogs/cheat_dialog_object.h>
+﻿#include <dialogs/cheat_dialog_object.h>

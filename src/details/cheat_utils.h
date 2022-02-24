@@ -1,4 +1,4 @@
-#ifndef __CHEAT_UTILS_H__
+ï»¿#ifndef __CHEAT_UTILS_H__
 #define __CHEAT_UTILS_H__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
@@ -419,13 +419,13 @@ namespace Mir
 
         std::string masks(data);
         {
-            // È¥µô 0x È¥µô ¿Õ¸ñ
+            // å»æ‰ 0x å»æ‰ ç©ºæ ¼
             if (StringReplace(masks, "0x") && StringReplace(masks, " "))
             {
-                // ´óĞ¡Ğ´×ª»»
+                // å¤§å°å†™è½¬æ¢
                 if (masks.end() == (1 == transform ? std::transform(masks.begin(), masks.end(), masks.begin(), [] (unsigned char ch) { return toupper(ch); }) : std::transform(masks.begin(), masks.end(), masks.begin(), [] (unsigned char ch) { return tolower(ch); })))
                 {
-                    // ¼ì²éÊÇ·ñÊÇÍêÕûµÄÊ®Áù½øÖÆÊı
+                    // æ£€æŸ¥æ˜¯å¦æ˜¯å®Œæ•´çš„åå…­è¿›åˆ¶æ•°
                     if (checkxdigit)
                     {
                         if (std::string::npos != masks.find_first_not_of(charhexset))
@@ -568,6 +568,11 @@ namespace Mir
     static bool SearchPatternEx(const u96 start, const u96 end, const std::string& keyword, std::size_t index, void*& address)
     {
         return SearchPatternEx(reinterpret_cast<const void*>(start), reinterpret_cast<const void*>(end), keyword, index, address);
+    }
+
+    template<class Fun, class... Args> constexpr auto wrap_call(Fun&& f, Args&&... args) noexcept(std::forward<Fun>(f)(std::forward<Args>(args)...))-> decltype(std::forward<Fun>(f)(std::forward<Args>(args)...))
+    {
+        return std::forward<Fun>(f)(std::forward<Args>(args)...);
     }
 }
 
