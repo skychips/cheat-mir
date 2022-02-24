@@ -170,6 +170,9 @@
     <ClInclude Include="..\..\src\sdk\cheat_game_struct.h">
       <Filter>header\sdk</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\details\cheat_xorstr.h">
+      <Filter>header\details</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\src\dialogs\cheat_dialog_main.h">

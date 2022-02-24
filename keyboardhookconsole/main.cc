@@ -1,4 +1,5 @@
 ﻿#include <details/cheat_platform.h>
+#include <details/cheat_xorstr.h>
 
 #include <iostream>
 #include <windows.h>
@@ -11,7 +12,7 @@ static unsigned char hex[] = { 0xE9, 0x3B, 0x9A, 0x0A, 0x00, 0xE9, 0x96, 0xBC, 0
 int main()
 {
 
-    printf("struct IGClient: %d %08X\n", sizeof(struct IGClient), sizeof(struct IGClient));
+    printf("struct IGClient: %d %08X %s\n", sizeof(struct IGClient), sizeof(struct IGClient), XORSTRING("123456"));
 
     std::string string_hex = "E9 C3 8B ?? ?? E9 ?? 01 0A 00 E9 ?? 4A 02 ?? E9 ?? 22 ?? ?? ?? FF 75 04 00 E9 2A EB 07 ?? E9 ?? 30 ?? 00 ?? ?? 50";
 

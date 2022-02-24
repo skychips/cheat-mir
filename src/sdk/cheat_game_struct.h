@@ -1406,29 +1406,29 @@ struct IGInterface
     IGDControl		                DControl;
     IGDWindow		                DWindow;
     IGDButton		                DButton;
-    IGDEdit			                DEdit;
-    IGDGrid			                DGrid;
+    IGDEdit                         DEdit;
+    IGDGrid                         DGrid;
     IGDComboBox		                DComboBox;
-    IGDPopupMenu		            DPopupMenu;
+    IGDPopupMenu                    DPopupMenu;
     IGDPageControl	                DPageControl;
     IGDProgressBar	                DProgressBar;
 };
 
 struct IGClient
 {
-    IGList			                List;
-    IGStringList		            StringList;
+    IGList                          List;
+    IGStringList                    StringList;
     IGItemMenuList	                ItemMenuList;
-    IGTexture			            Texture;
-    IGImages			            Images;
-    IGInterface		                Interface;
-    IGDraw			                Draw;
-    IGActor			                Actor;
-    IGSocket			            Socket;
-    IGHook			                Hook;
-    IGGame			                Game;
-    IGDialog	                    Dialog;
-    int					            Reserveds[72];
+    IGTexture                       Texture;
+    IGImages                        Images;
+    IGInterface                     Interface;
+    IGDraw                          Draw;
+    IGActor                         Actor;
+    IGSocket                        Socket;
+    IGHook                          Hook;
+    IGGame                          Game;
+    IGDialog                        Dialog;
+    int                             Reserveds[72];
 };
 
 struct IGClientGoods

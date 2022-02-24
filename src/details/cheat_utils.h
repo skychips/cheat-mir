@@ -29,8 +29,7 @@
 #include <array>
 #include <unordered_map>
 
-#include <smmintrin.h>
-#include <xmmintrin.h>
+#include <immintrin.h>
 
 namespace Mir
 {
