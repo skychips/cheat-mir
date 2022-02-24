@@ -1403,9 +1403,9 @@ struct IGItemMenuList
 
 struct IGInterface
 {
-    IGDControl		                DControl;
-    IGDWindow		                DWindow;
-    IGDButton		                DButton;
+    IGDControl                      DControl;
+    IGDWindow                       DWindow;
+    IGDButton                       DButton;
     IGDEdit                         DEdit;
     IGDGrid                         DGrid;
     IGDComboBox		                DComboBox;
