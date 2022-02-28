@@ -471,7 +471,7 @@ namespace Mir
     {
         if (keyword.empty())
         {
-            return false;
+            return true;
         }
 
         if (start != end && static_cast<const unsigned char*>(end) > static_cast<const unsigned char*>(start) && static_cast<std::size_t>(static_cast<const unsigned char*>(end) - static_cast<const unsigned char*>(start)) > keyword.size())
@@ -493,14 +493,14 @@ namespace Mir
                                 address = const_cast<void*>(reinterpret_cast<const void*>(pos + offset));
                             }
 
-                            return true;
+                            return false;
                         }
                     }
                 }
             }
         }
 
-        return false;
+        return true;
     }
 
     static bool SearchPattern(const u96 start, const u96 end, const std::string& keyword, std::size_t index, std::size_t offset, void*& address)
@@ -605,15 +605,15 @@ namespace Mir
                     }
                     __except (ExceptionFilter(GetExceptionInformation()))
                     {
-                        return false;
+                        return true;
                     }
 
-                    return true;
+                    return false;
                 }
             }
         }
 
-        return false;
+        return true;
     }
 
     template<typename R>
@@ -621,7 +621,7 @@ namespace Mir
     {
         if (keyword.empty())
         {
-            return false;
+            return true;
         }
 
         if (start != end && static_cast<const unsigned char*>(end) > static_cast<const unsigned char*>(start) && static_cast<std::size_t>(static_cast<const unsigned char*>(end) - static_cast<const unsigned char*>(start)) > keyword.size())
@@ -635,7 +635,7 @@ namespace Mir
             }
         }
 
-        return false;
+        return true;
     }
 
     template<typename R>
