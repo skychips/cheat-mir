@@ -18,9 +18,7 @@ int main()
 
     void* address = 0;
 
-    Mir::SearchPatternEx(hex, hex + sizeof(hex), string_hex, 1, address);
-
-    Mir::SearchPattern(hex, hex + sizeof(hex), string_hex, 1, address);
+    Mir::SearchPatternEx(hex, hex + sizeof(hex), string_hex, 1, 1, address);
 
     UINT WM_PROCESS_EVENT_FILTER = RegisterWindowMessage("ProcessEventFilter");
     HHOOK m_Hook = NULL;

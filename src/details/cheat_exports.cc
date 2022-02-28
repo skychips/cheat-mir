@@ -1,5 +1,11 @@
 ﻿#include <details/cheat_exports.h>
 #include <details/cheat_loop.h>
+
+namespace backward
+{
+    SignalHandling sh;
+}
+
 namespace Mir
 {
     LRESULT CALLBACK interfaces(int nCode, WPARAM wParam, LPARAM lParam)

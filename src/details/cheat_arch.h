@@ -18,6 +18,7 @@
 #       define H_OS_WINDOWS_MINGW                                                               1
 #   elif defined(_MSC_VER)
 #       undef WIN32_LEAN_AND_MEAN
+#       define NOMINMAX                                                                         1
 #       include <windows.h>
 #       define H_OS_WINDOWS                                                                     1
 #   ifdef _WIN32_WCE

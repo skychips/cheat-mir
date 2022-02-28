@@ -40,14 +40,17 @@ namespace Mir
                     cheat_main->setAttribute(Qt::WA_DeleteOnClose);
                     cheat_main->show();
 
-                    void * address          = 0;
+                    struct IGClient* Client = 0;
 
-                    SearchPatternEx(0x00663500, 0x00664000, "BB ?? ?? ?? ?? 8B C3 33 C9 BA ?? ?? ?? ?? E8", 1, address);
-                    printf("插件地址: %p\n", address);
+                    SearchPatternEx(0x00546000, 0x006F0000, "BB ?? ?? ?? ?? 8B C3 33 C9 BA ?? ?? ?? ?? E8", 1, 1, Client);
+                    printf("插件地址: %p\n", Client);
 
-                    struct IGClient* Client = reinterpret_cast<struct IGClient*>(*reinterpret_cast<unsigned int*>(reinterpret_cast<unsigned int>(address) + 1));
+                    const char* path = wrap_call_ex<const char*>(Client->Game.ClientPath);
 
-                    SearchPatternEx(0x00638000, 0x00639000, "A1 ?? ?? ?? ?? C6 00 00 E8 ?? ?? ?? ?? 33 C0 5A 59 59", 1, address);
+                    printf("游戏路径：%s\n", path);
+
+                    void* address = 0;
+                    SearchPatternEx(0x00546000, 0x006F0000, "A1 ?? ?? ?? ?? C6 00 00 E8 ?? ?? ?? ?? 33 C0 5A 59 59", 1, 1, address);
                     printf("吃药地址: %p\n", address);
 
                     a.exec();

@@ -8,6 +8,7 @@
 #include <details/cheat_stdint.h>
 #include <details/cheat_callback.h>
 #include <details/cheat_duration.h>
+#include <details/cheat_untlity.h>
 
 #include <cstdint>
 #include <iostream>
@@ -397,7 +398,7 @@ namespace Mir
 
         for (std::size_t i = 0; i < data.size(); i += offset)
         {
-            if (std::isxdigit(data[i]))
+            if (isxdigit(data[i]))
             {
                 buffer += static_cast<char>(std::stoul(data.substr(i, offset), nullptr, 16));
             }
@@ -465,6 +466,7 @@ namespace Mir
                               const void* end,                      // end address
                               const std::string& keyword,           // characteristic code
                               std::size_t index,                    // take out the serial number
+                              std::size_t offset,
                               void*& address)                       // return to address
     {
         if (keyword.empty())
@@ -488,7 +490,7 @@ namespace Mir
                             }
                             else
                             {
-                                address = const_cast<void*>(reinterpret_cast<const void*>(pos));
+                                address = const_cast<void*>(reinterpret_cast<const void*>(pos + offset));
                             }
 
                             return true;
@@ -501,12 +503,77 @@ namespace Mir
         return false;
     }
 
-    static bool SearchPattern(const u96 start, const u96 end, const std::string& keyword, std::size_t index, void*& address)
+    static bool SearchPattern(const u96 start, const u96 end, const std::string& keyword, std::size_t index, std::size_t offset, void*& address)
     {
-        return SearchPattern(reinterpret_cast<const void*>(start), reinterpret_cast<const void*>(end), keyword, index, address);
+        return SearchPattern(reinterpret_cast<const void*>(start), reinterpret_cast<const void*>(end), keyword, index, offset, address);
     }
 
-    static bool SearchPatternEx(const void* start, const void* end, const std::string& chars, std::size_t index, std::size_t count, void*& address)
+    //static bool SearchPatternEx(const void* start, const void* end, const std::string& chars, std::size_t index, std::size_t offset, void*& address, std::size_t count)
+    //{
+    //    for (auto [masks, i, n, pos] = std::make_tuple(std::array<std::size_t, 32>{}, static_cast<std::size_t>(0), static_cast<std::size_t>(0), static_cast<const unsigned char*>(start)); i < count; ++i)
+    //    {
+    //        for (std::size_t j = 0; j < 16 && n < chars.size(); ++j, ++n)
+    //        {
+    //            if ('X' != static_cast<const char*>(chars.c_str() + i * 16)[j])
+    //            {
+    //                masks[i] |= static_cast<std::size_t>(1) << j;
+    //            }
+    //        }
+
+    //        for (auto [store, j] = std::make_tuple(_mm_loadu_si128(reinterpret_cast<const __m128i *>(chars.c_str() + i * 16)), static_cast<std::size_t>(0)); pos <= end; _mm_prefetch(reinterpret_cast<const char*>(++pos + 64), _MM_HINT_NTA))
+    //        {
+    //            if (static_cast<std::size_t>(static_cast<std::size_t>(_mm_movemask_epi8(_mm_cmpeq_epi8(_mm_loadu_si128(reinterpret_cast<const __m128i *>(pos + i * 16)), store))) & masks[i]) == masks[i])
+    //            {
+    //                if (n < chars.size())
+    //                {
+    //                    break;
+    //                }
+
+    //                if (++j != index)
+    //                {
+    //                    continue;
+    //                }
+    //                else
+    //                {
+    //                    address = const_cast<void*>(reinterpret_cast<const void*>(pos + offset));
+    //                }
+
+    //                return true;
+    //            }
+    //        }
+    //    }
+
+    //    return false;
+    //}
+
+    //static bool SearchPatternEx(const void* start, const void* end, const std::string& keyword, std::size_t index, std::size_t offset, void*& address)
+    //{
+    //    if (keyword.empty())
+    //    {
+    //        return false;
+    //    }
+
+    //    if (start != end && static_cast<const unsigned char*>(end) > static_cast<const unsigned char*>(start) && static_cast<std::size_t>(static_cast<const unsigned char*>(end) - static_cast<const unsigned char*>(start)) > keyword.size())
+    //    {
+    //        std::string chars;
+    //        {
+    //            if (Hexadec2xdigitEx(keyword, chars, 0))
+    //            {
+    //                return SearchPatternEx(start, end, chars, index, offset, address, static_cast<std::size_t>((((chars.size()) + (16 - 1)) & ~(16 - 1)) >> 4));
+    //            }
+    //        }
+    //    }
+
+    //    return false;
+    //}
+
+    //static bool SearchPatternEx(const u96 start, const u96 end, const std::string& keyword, std::size_t index, std::size_t offset, void*& address)
+    //{
+    //    return SearchPatternEx(reinterpret_cast<const void*>(start), reinterpret_cast<const void*>(end), keyword, index, offset, address);
+    //}
+
+    template<typename R>
+    static bool SearchPatternEx(const void* start, const void* end, const std::string& chars, std::size_t index, std::size_t offset, R*& address, std::size_t count)
     {
         for (auto [masks, i, n, pos] = std::make_tuple(std::array<std::size_t, 32>{}, static_cast<std::size_t>(0), static_cast<std::size_t>(0), static_cast<const unsigned char*>(start)); i < count; ++i)
         {
@@ -531,9 +598,14 @@ namespace Mir
                     {
                         continue;
                     }
-                    else
+
+                    __try
                     {
-                        address = const_cast<void*>(reinterpret_cast<const void*>(pos));
+                        address = reinterpret_cast<R*>(*reinterpret_cast<unsigned char**>(const_cast<unsigned char*>(pos + offset)));
+                    }
+                    __except (ExceptionFilter(GetExceptionInformation()))
+                    {
+                        return false;
                     }
 
                     return true;
@@ -544,7 +616,8 @@ namespace Mir
         return false;
     }
 
-    static bool SearchPatternEx(const void* start, const void* end, const std::string& keyword, std::size_t index, void*& address)
+    template<typename R>
+    static bool SearchPatternEx(const void* start, const void* end, const std::string& keyword, std::size_t index, std::size_t offset, R*& address)
     {
         if (keyword.empty())
         {
@@ -557,7 +630,7 @@ namespace Mir
             {
                 if (Hexadec2xdigitEx(keyword, chars, 0))
                 {
-                    return SearchPatternEx(start, end, chars, index, static_cast<std::size_t>((((chars.size()) + (16 - 1)) & ~(16 - 1)) >> 4), address);
+                    return SearchPatternEx(start, end, chars, index, offset, address, static_cast<std::size_t>((((chars.size()) + (16 - 1)) & ~(16 - 1)) >> 4));
                 }
             }
         }
@@ -565,14 +638,23 @@ namespace Mir
         return false;
     }
 
-    static bool SearchPatternEx(const u96 start, const u96 end, const std::string& keyword, std::size_t index, void*& address)
+    template<typename R>
+    static bool SearchPatternEx(const u96 start, const u96 end, const std::string& keyword, std::size_t index, std::size_t offset, R*& address)
     {
-        return SearchPatternEx(reinterpret_cast<const void*>(start), reinterpret_cast<const void*>(end), keyword, index, address);
+        return SearchPatternEx(reinterpret_cast<const void*>(start), reinterpret_cast<const void*>(end), keyword, index, offset, address);
     }
 
-    template<class Fun, class... Args> constexpr auto wrap_call(Fun&& f, Args&&... args) noexcept(std::forward<Fun>(f)(std::forward<Args>(args)...))-> decltype(std::forward<Fun>(f)(std::forward<Args>(args)...))
+    template<class Fun, class... Args> constexpr auto wrap_call(Fun&& f, Args&&... args) noexcept(std::forward<Fun>(f)(std::forward<Args>(args)...))->decltype(std::forward<Fun>(f)(std::forward<Args>(args)...))
     {
+        // std::invoke();
+        // std::call_once();
         return std::forward<Fun>(f)(std::forward<Args>(args)...);
+    }
+
+    template<typename R, typename Fun, typename... Args>
+    constexpr auto wrap_call_ex(Fun&& function, Args&&... args)
+    {
+        return std::invoke(reinterpret_cast<R(__stdcall*)(typename::std::forward<Args>(args)...)>(std::forward<Fun>(function)));
     }
 }
 

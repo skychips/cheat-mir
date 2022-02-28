@@ -37,6 +37,16 @@
 #       define CHEAT_EXPORT
 #endif
 
+#ifndef BACKWARD
+#   define BACKWARD_HAS_UNWIND                                      1
+#   define BACKWARD_HAS_LIBUNWIND                                   0
+#   define BACKWARD_HAS_BACKTRACE                                   0
+#   define BACKWARD_HAS_BACKTRACE_SYMBOL                            1
+#   define BACKWARD_HAS_DW                                          0
+#   define BACKWARD_HAS_BFD                                         0
+#   define BACKWARD_HAS_DWARF                                       0
+#endif
+
 #ifdef H_OS_WINDOWS
 #   pragma warning( disable: 4251 )
 #   pragma warning( disable: 4996 )

@@ -1,7 +1,6 @@
 ﻿#include <details/cheat_exports.h>
 #include <details/cheat_plugin.h>
 
-
 BOOL APIENTRY DllMain(HMODULE hinstance,
                       DWORD reason,
                       LPVOID reserved)

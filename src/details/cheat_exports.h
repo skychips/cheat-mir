@@ -8,6 +8,8 @@
 #include <details/cheat_platform.h>
 #include <memory>
 
+#include <backward.hpp>
+
 namespace Mir
 {
     LRESULT CALLBACK interfaces(int nCode, WPARAM wParam, LPARAM lParam);
