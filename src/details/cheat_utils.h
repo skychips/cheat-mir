@@ -654,7 +654,7 @@ namespace Mir
     template<typename R, typename Fun, typename... Args>
     constexpr auto wrap_call_ex(Fun&& function, Args&&... args)
     {
-        return std::invoke(reinterpret_cast<R(__stdcall*)(typename::std::forward<Args>(args)...)>(std::forward<Fun>(function)));
+        return std::invoke(reinterpret_cast<R(__stdcall*)(Args ...)>(typename::std::forward<Fun>(function)), typename::std::forward<Args>(args)...);
     }
 }
 

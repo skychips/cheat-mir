@@ -36,7 +36,7 @@ namespace Mir
                 {
                     QApplication a(*const_cast<int*>(std::addressof(static_cast<const int&>(0))), nullptr);
                     QWidget widget;
-                    cheat_main              = std::make_unique<CheatDialogMain>(&widget);
+                    cheat_main = std::make_unique<CheatDialogMain>(&widget);
                     cheat_main->setAttribute(Qt::WA_DeleteOnClose);
                     cheat_main->show();
 
@@ -47,7 +47,11 @@ namespace Mir
 
                     const char* path = wrap_call_ex<const char*>(Client->Game.ClientPath);
 
+                    HWND hwnd = wrap_call_ex<HWND>(&FindWindow, nullptr, "Legend of Mir2");
+
                     printf("游戏路径：%s\n", path);
+
+                    printf("HWND：%08X\n", hwnd);
 
                     void* address = 0;
                     SearchPatternEx(0x00546000, 0x006F0000, "A1 ?? ?? ?? ?? C6 00 00 E8 ?? ?? ?? ?? 33 C0 5A 59 59", 1, 1, address);
