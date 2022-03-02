@@ -573,7 +573,7 @@ namespace Mir
     //}
 
     template<typename R>
-    static bool SearchPatternEx(const void* start, const void* end, const std::string& chars, std::size_t index, std::size_t offset, R*& address, std::size_t count)
+    bool SearchPatternEx(const void* start, const void* end, const std::string& chars, std::size_t index, std::size_t offset, R*& address, std::size_t count)
     {
         for (auto [masks, i, n, pos] = std::make_tuple(std::array<std::size_t, 32>{}, static_cast<std::size_t>(0), static_cast<std::size_t>(0), static_cast<const unsigned char*>(start)); i < count; ++i)
         {
@@ -617,7 +617,7 @@ namespace Mir
     }
 
     template<typename R>
-    static bool SearchPatternEx(const void* start, const void* end, const std::string& keyword, std::size_t index, std::size_t offset, R*& address)
+    bool SearchPatternEx(const void* start, const void* end, const std::string& keyword, std::size_t index, std::size_t offset, R*& address)
     {
         if (keyword.empty())
         {
@@ -639,22 +639,22 @@ namespace Mir
     }
 
     template<typename R>
-    static bool SearchPatternEx(const u96 start, const u96 end, const std::string& keyword, std::size_t index, std::size_t offset, R*& address)
+    bool SearchPatternEx(const u96 start, const u96 end, const std::string& keyword, std::size_t index, std::size_t offset, R*& address)
     {
         return SearchPatternEx(reinterpret_cast<const void*>(start), reinterpret_cast<const void*>(end), keyword, index, offset, address);
     }
 
-    template<class Fun, class... Args> constexpr auto wrap_call(Fun&& f, Args&&... args) noexcept(std::forward<Fun>(f)(std::forward<Args>(args)...))->decltype(std::forward<Fun>(f)(std::forward<Args>(args)...))
+    template<class Fun, class... Args>
+    constexpr auto wrap_call(Fun&& f, Args&&... args)
+        noexcept(std::forward<Fun>(f)(std::forward<Args>(args)...))->decltype(std::forward<Fun>(f)(std::forward<Args>(args)...))
     {
-        // std::invoke();
-        // std::call_once();
         return std::forward<Fun>(f)(std::forward<Args>(args)...);
     }
 
     template<typename R, typename Fun, typename... Args>
-    constexpr auto wrap_call_ex(Fun&& function, Args&&... args)
+    constexpr auto wrap_call_ex(Fun&& f, Args&&... args)
     {
-        return std::invoke(reinterpret_cast<R(__stdcall*)(Args ...)>(typename::std::forward<Fun>(function)), typename::std::forward<Args>(args)...);
+        return std::invoke(reinterpret_cast<R(__stdcall*)(Args ...)>(typename::std::forward<Fun>(f)), typename::std::forward<Args>(args)...);
     }
 }
 

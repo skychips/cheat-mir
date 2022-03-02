@@ -34,9 +34,9 @@ namespace Mir
         return QWidget::isHidden();
     }
 
-    bool CheatDialogMain::eventFilter(QObject * object, QEvent * event)
+    bool CheatDialogMain::eventFilter(QObject* object, QEvent* event)
     {
-        if (QEvent::Type::Close == event->type())
+        if (object == this && QEvent::Type::Close == event->type())
         {
             if (adjustVisible())
             {
