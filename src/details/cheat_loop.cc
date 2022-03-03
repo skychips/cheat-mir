@@ -58,6 +58,8 @@ namespace Mir
                     printf("吃药地址: %p\n", address);
 
                     a.exec();
+
+                    printf("窗口退出\n");
                 }
 
                 if (reinterpret_cast<LPMSG>(lParam)->message == WM_KEYDOWN || reinterpret_cast<LPMSG>(lParam)->message == WM_SYSKEYDOWN)

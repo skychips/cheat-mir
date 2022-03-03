@@ -6,10 +6,9 @@ namespace Mir
         : QMainWindow(parent)
         , cheat_dialog_main(new Ui::CheatDialogMain)
     {
-        setWindowFlags(windowFlags() & ~Qt::WindowType::WindowMinMaxButtonsHint);
-        cheat_dialog_main->setupUi(this);
-
+        setWindowFlags(windowFlags() & ~Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint | Qt::WindowCloseButtonHint);
         QApplication::instance()->installEventFilter(this);
+        cheat_dialog_main->setupUi(this);
     }
 
     CheatDialogMain::~CheatDialogMain()
@@ -36,13 +35,31 @@ namespace Mir
 
     bool CheatDialogMain::eventFilter(QObject* object, QEvent* event)
     {
-        if (object == this && QEvent::Type::Close == event->type())
+        if (nullptr == object || event == nullptr)
         {
-            if (adjustVisible())
+            return false;
+        }
+
+        if (object == this)
+        {
+            switch (event->type())
             {
-                return true;
+                case QEvent::Type::Close:
+                {
+                    if (adjustVisible())
+                    {
+                        event->ignore();
+                        return true;
+                    }
+                }
             }
         }
+
         return QMainWindow::eventFilter(object, event);
+    }
+
+    void CheatDialogMain::changeEvent(QEvent* event)
+    {
+        printf("最小化\n");
     }
 }

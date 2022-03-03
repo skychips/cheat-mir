@@ -27,6 +27,7 @@ namespace Mir
         bool adjustVisible();
     private:
         bool eventFilter(QObject* object, QEvent* event);
+        void changeEvent(QEvent* event);
     private:
         Ui::CheatDialogMain*                        cheat_dialog_main;
     private:
