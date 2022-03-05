@@ -1,6 +1,6 @@
 ﻿#include <dialogs/cheat_dialog_main.h>
 
-namespace Mir
+namespace Cheat
 {
     CheatDialogMain::CheatDialogMain(QWidget *parent)
         : QMainWindow(parent)

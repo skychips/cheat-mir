@@ -3,7 +3,7 @@
  <class>CheatDialogMain</class>
  <widget class="QMainWindow" name="CheatDialogMain">
   <property name="windowModality">
-   <enum>Qt::WindowModal</enum>
+   <enum>Qt::ApplicationModal</enum>
   </property>
   <property name="geometry">
    <rect>
@@ -1870,6 +1870,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../../QDarkStyleSheet-3.0.2/qdarkstyle/dark/style.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -1,144 +1,126 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="dialog">
-      <UniqueIdentifier>{0dc79ff3-7107-4b61-b34c-c0bd78948355}</UniqueIdentifier>
+    <Filter Include="include">
+      <UniqueIdentifier>{339ab382-80dc-4534-a4ce-369041a1d3a7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="object">
-      <UniqueIdentifier>{91bb6d7d-8a2d-439a-91f1-c9c8e8d30ece}</UniqueIdentifier>
+    <Filter Include="include\details">
+      <UniqueIdentifier>{7cdc545c-9c30-46e3-93a8-c99a11ae008f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="object\x86">
-      <UniqueIdentifier>{36aa6a29-4a5a-4f7c-bab7-382caf414bba}</UniqueIdentifier>
+    <Filter Include="include\memory">
+      <UniqueIdentifier>{3d74ec4a-d615-4658-a89d-f2b7c43353ad}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source">
+    <Filter Include="include\game">
+      <UniqueIdentifier>{16f002e3-df16-445f-b4cb-06c4549c4841}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="header">
-      <UniqueIdentifier>{339ab382-80dc-4534-a4ce-369041a1d3a7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="dialog\object">
-      <UniqueIdentifier>{8eff7245-849a-48dc-8334-e4e56c6c96c4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="dialog\ui">
-      <UniqueIdentifier>{e9489232-62d5-4da3-b82d-e5c2498058ca}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="header\details">
-      <UniqueIdentifier>{7cdc545c-9c30-46e3-93a8-c99a11ae008f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="source\details">
+    <Filter Include="src\details">
       <UniqueIdentifier>{dc330e39-cafa-4b43-80c3-2e28bcef0fee}</UniqueIdentifier>
     </Filter>
-    <Filter Include="resource">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="object\x86\debug">
-      <UniqueIdentifier>{69d3ca07-345d-4712-a44c-ee5316bd0a2a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="object\x86\release">
-      <UniqueIdentifier>{7ca503b1-6d43-455e-a0ad-c67354f41ae9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="source\memory">
+    <Filter Include="src\memory">
       <UniqueIdentifier>{93180bb2-6414-4aa8-b3d4-9f20550cae5c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="header\memory">
-      <UniqueIdentifier>{3d74ec4a-d615-4658-a89d-f2b7c43353ad}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="dialog\src">
-      <UniqueIdentifier>{0420e177-7296-4459-acbd-fd7b30f4fabf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="source\sdk">
+    <Filter Include="src\sdk">
       <UniqueIdentifier>{bd6005ea-cf25-41e0-9d5d-b2f0f178b3fe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="header\sdk">
-      <UniqueIdentifier>{e1bcebc2-1368-4896-ab1a-7bd013e6fb89}</UniqueIdentifier>
+    <Filter Include="include\dialog">
+      <UniqueIdentifier>{0dc79ff3-7107-4b61-b34c-c0bd78948355}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\dialog\object">
+      <UniqueIdentifier>{8eff7245-849a-48dc-8334-e4e56c6c96c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\dialog\ui">
+      <UniqueIdentifier>{e9489232-62d5-4da3-b82d-e5c2498058ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\dialog\src">
+      <UniqueIdentifier>{0420e177-7296-4459-acbd-fd7b30f4fabf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\cheat_exports.def">
-      <Filter>resource</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\src\cheat_main.cc">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\details\cheat_console.cc">
-      <Filter>source\details</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\details\cheat_exports.cc">
-      <Filter>source\details</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\details\cheat_loop.cc">
-      <Filter>source\details</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\details\cheat_translate.cc">
-      <Filter>source\details</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\dialogs\cheat_dialog_main.cc">
-      <Filter>dialog\src</Filter>
+      <Filter>include\dialog\src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\dialogs\cheat_dialog_object.cc">
-      <Filter>dialog\object</Filter>
+      <Filter>include\dialog\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cheat_console.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cheat_exports.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cheat_loop.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cheat_translate.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cheat_main.cc">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\dialogs\cheat_dialog_object.h">
-      <Filter>dialog\object</Filter>
+    <ClInclude Include="..\..\include\details\cheat_plugin.h">
+      <Filter>include\details</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\dialogs\cheat_dialog_main.hxx">
-      <Filter>dialog\ui</Filter>
+    <ClInclude Include="..\..\include\details\cheat_stdint.h">
+      <Filter>include\details</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\details\cheat_loop.h">
-      <Filter>header\details</Filter>
+    <ClInclude Include="..\..\include\details\cheat_untlity.h">
+      <Filter>include\details</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\details\cheat_platform.h">
-      <Filter>header\details</Filter>
+    <ClInclude Include="..\..\include\details\cheat_utils.h">
+      <Filter>include\details</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\details\cheat_plugin.h">
-      <Filter>header\details</Filter>
+    <ClInclude Include="..\..\include\details\cheat_xorstr.h">
+      <Filter>include\details</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\details\cheat_stdint.h">
-      <Filter>header\details</Filter>
+    <ClInclude Include="..\..\include\details\cheat_arch.h">
+      <Filter>include\details</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\details\cheat_translate.h">
-      <Filter>header\details</Filter>
+    <ClInclude Include="..\..\include\details\cheat_platform.h">
+      <Filter>include\details</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\details\cheat_untlity.h">
-      <Filter>header\details</Filter>
+    <ClInclude Include="..\..\include\dialogs\cheat_dialog_object.h">
+      <Filter>include\dialog\object</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\details\cheat_utils.h">
-      <Filter>header\details</Filter>
+    <ClInclude Include="..\..\include\dialogs\cheat_dialog_main.hxx">
+      <Filter>include\dialog\ui</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\details\cheat_arch.h">
-      <Filter>header\details</Filter>
+    <ClInclude Include="..\..\include\details\cheat_cpuinfo.h">
+      <Filter>include\details</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\details\cheat_callback.h">
-      <Filter>header\details</Filter>
+    <ClInclude Include="..\..\include\details\cheat_duration.h">
+      <Filter>include\details</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\details\cheat_console.h">
-      <Filter>header\details</Filter>
+    <ClInclude Include="..\..\include\details\cheat_callback.h">
+      <Filter>include\details</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\details\cheat_duration.h">
-      <Filter>header\details</Filter>
+    <ClInclude Include="..\..\include\game\cheat_game_struct.h">
+      <Filter>include\game</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\details\cheat_exports.h">
-      <Filter>header\details</Filter>
+    <ClInclude Include="..\cheat_console.h">
+      <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\details\cheat_cpuinfo.h">
-      <Filter>header\details</Filter>
+    <ClInclude Include="..\cheat_exports.h">
+      <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\details\cheat_xorstr.h">
-      <Filter>header\details</Filter>
+    <ClInclude Include="..\cheat_loop.h">
+      <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\sdk\cheat_game_struct.h">
-      <Filter>header\sdk</Filter>
+    <ClInclude Include="..\cheat_translate.h">
+      <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="..\..\src\dialogs\cheat_dialog_main.h">
-      <Filter>dialog\src</Filter>
+    <CustomBuild Include="..\..\include\dialogs\cheat_dialog_main.h">
+      <Filter>include\dialog\src</Filter>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\cheat_exports.def" />
   </ItemGroup>
 </Project>
